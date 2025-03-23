@@ -6,6 +6,7 @@ questions = [ "¿Qué función se usa para obtener la longitud de una cadena en 
 "¿Cuál de las siguientes expresiones es un comentario válido en Python?",
 "¿Cuál es el operador de comparación para verificar si dos valores son iguales?",
 ]
+Puntuacion=0
 # Respuestas posibles para cada pregunta, en el mismo orden que las preguntas
 answers = [
 ("size()", "len()", "length()", "count()"),
@@ -37,14 +38,17 @@ for _ in range(3):
             exit(1)
         #   Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
+            Puntuacion+=1
             print("¡Correcto!")
             break
         else:
+            Puntuacion-=1
+    else:
         # Si el usuario no responde correctamente después de 2 intentos,
         # se muestra la respuesta correcta
-            print("Incorrecto. La respuesta correcta es:")
-            print(answers[question_index]
-            [correct_answers_index[question_index]])
+        print("Incorrecto. La respuesta correcta es:")
+        print(answers[question_index]
+        [correct_answers_index[question_index]])
 # Se imprime un blanco al final de la pregunta
 print()
 
